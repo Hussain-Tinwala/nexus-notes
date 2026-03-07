@@ -1,18 +1,18 @@
 import express from "express"
 import notesRoutes from "./routes/notes.routes.js"
-import { createNote, deleteNote, getAllNotes, updateNote } from "./contollers/notes.controller.js";
 import { connectDB } from "./config/db.js";
 import dotenv from "dotenv"
+import rateLimiter from "./middleware/rateLimiter.js";
 
 dotenv.config();
 const PORT=process.env.PORT || 5001;
 
 const app=express()
-connectDB();
+// connectDB();
 
 // parse json data (req.body)
 app.use(express.json());
-
+app.use(rateLimiter)
 // custom middleware
 // app.use((req, res, next)=>{
 //     console.log(`Request method is ${req.method}, Request URL: ${req.url}`);
@@ -20,6 +20,8 @@ app.use(express.json());
 
 app.use('/api/notes', notesRoutes);
 
-app.listen(5001, ()=>{
+connectDB().then(()=>{
+    app.listen(5001, ()=>{
     console.log("Server running on PORT: 5001");
+    })
 })
