@@ -10,6 +10,14 @@ const PORT=process.env.PORT || 5001;
 const app=express()
 connectDB();
 
+// parse json data (req.body)
+app.use(express.json());
+
+// custom middleware
+// app.use((req, res, next)=>{
+//     console.log(`Request method is ${req.method}, Request URL: ${req.url}`);
+// })
+
 app.use('/api/notes', notesRoutes);
 
 app.listen(5001, ()=>{
