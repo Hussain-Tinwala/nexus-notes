@@ -1,21 +1,22 @@
 {
-  "name": "mern-notes",
+  "name": "nexus-notes",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend"
+    "build": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "npm run start --prefix backend"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Hussain-Tinwala/mern-notes.git"
+    "url": "git+https://github.com/Hussain-Tinwala/nexus-notes.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/Hussain-Tinwala/mern-notes/issues"
+    "url": "https://github.com/Hussain-Tinwala/nexus-notes/issues"
   },
-  "homepage": "https://github.com/Hussain-Tinwala/mern-notes#readme"
+  "homepage": "https://github.com/Hussain-Tinwala/nexus-notes#readme"
 }
