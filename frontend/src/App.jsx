@@ -8,12 +8,13 @@ import toast from 'react-hot-toast'
 const App = () => {
   return (
     <div data-theme="forest">
-      <button className='btn btn-outline' onClick={()=>toast.success("Congrats")}>Click Me</button>
+      <div className="relative min-h-screen w-full">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/create" element={<CreatePage />} />
         <Route path="/note/:id" element={<DetailPage />} />
       </Routes>
+      </div>
     </div>
   )
 }
